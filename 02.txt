@@ -1,0 +1,91 @@
+root@polystudent-virtual-machine:~/바탕화면# cd
+root@polystudent-virtual-machine:~# cd 다운로드
+root@polystudent-virtual-machine:~/다운로드# cd
+root@polystudent-virtual-machine:~# cd download
+bash: cd: download: 그런 파일이나 디렉터리가 없습니다
+root@polystudent-virtual-machine:~# cd 다운로드
+root@polystudent-virtual-machine:~/다운로드# ls
+root@polystudent-virtual-machine:~/다운로드# ls -l
+합계 0
+root@polystudent-virtual-machine:~/다운로드# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+--2023-05-16 10:25:09--  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+dl.google.com (dl.google.com) 해석 중... 142.250.66.78, 2404:6800:4005:805::200e
+다음으로 연결 중: dl.google.com (dl.google.com)|142.250.66.78|:443... 연결했습니다.
+HTTP 요청을 보냈습니다. 응답 기다리는 중... 200 OK
+길이: 94953468 (91M) [application/x-debian-package]
+저장 위치: ‘google-chrome-stable_current_amd64.deb’
+
+google-chrome-stabl 100%[===================>]  90.55M  14.5MB/s    / 8.4s     
+
+2023-05-16 10:25:17 (10.7 MB/s) - ‘google-chrome-stable_current_amd64.deb’ 저장함 [94953468/94953468]
+
+root@polystudent-virtual-machine:~/다운로드# ls
+google-chrome-stable_current_amd64.deb
+root@polystudent-virtual-machine:~/다운로드# dpkg -i google-chrome-stable_current_amd64.deb 
+Selecting previously unselected package google-chrome-stable.
+(데이터베이스 읽는중 ...현재 205027개의 파일과 디렉터리가 설치되어 있습니다.)
+Preparing to unpack google-chrome-stable_current_amd64.deb ...
+Unpacking google-chrome-stable (113.0.5672.92-1) ...
+google-chrome-stable (113.0.5672.92-1) 설정하는 중입니다 ...
+update-alternatives: using /usr/bin/google-chrome-stable to provide /usr/bin/x-www-browser (x-www-browser) in auto mode
+update-alternatives: using /usr/bin/google-chrome-stable to provide /usr/bin/gnome-www-browser (gnome-www-browser) in auto mode
+update-alternatives: using /usr/bin/google-chrome-stable to provide /usr/bin/google-chrome (google-chrome) in auto mode
+Processing triggers for mailcap (3.70+nmu1ubuntu1) ...
+Processing triggers for gnome-menus (3.36.0-1ubuntu3) ...
+Processing triggers for desktop-file-utils (0.26-1ubuntu3) ...
+Processing triggers for man-db (2.10.2-1) ...
+root@polystudent-virtual-machine:~/다운로드# apt install google-chrome-stable_current_amd64.deb 
+패키지 목록을 읽는 중입니다... 완료
+의존성 트리를 만드는 중입니다... 완료
+상태 정보를 읽는 중입니다... 완료        
+E: google-chrome-stable_current_amd64.deb 패키지를 찾을 수 없습니다
+root@polystudent-virtual-machine:~/다운로드# apt install ./google-chrome-stable_current_amd64.deb 
+패키지 목록을 읽는 중입니다... 완료
+의존성 트리를 만드는 중입니다... 완료
+상태 정보를 읽는 중입니다... 완료        
+주의, './google-chrome-stable_current_amd64.deb' 대신에 'google-chrome-stable' 패키지를 선택합니다
+패키지 google-chrome-stable는 이미 최신 버전입니다 (113.0.5672.92-1).
+0개 업그레이드, 0개 새로 설치, 0개 제거 및 0개 업그레이드 안 함.
+root@polystudent-virtual-machine:~/다운로드# google-drive
+google-drive: 명령을 찾을 수 없습니다
+root@polystudent-virtual-machine:~/다운로드# goodle-chrome
+goodle-chrome: 명령을 찾을 수 없습니다
+root@polystudent-virtual-machine:~/다운로드# nano /usr/bin/google-chrome-stable
+root@polystudent-virtual-machine:~/다운로드# google-chrome
+root@polystudent-virtual-machine:~/다운로드# [0516/104633.580933:ERROR:nacl_helper_linux.cc(355)] NaCl helper process running without a sandbox!
+Most likely you need to configure your SUID sandbox correctly
+cd
+root@polystudent-virtual-machine:~# cd 다운로드
+root@polystudent-virtual-machine:~/다운로드# nano /usr/bin/google-chrome-stable
+root@polystudent-virtual-machine:~/다운로드# google-chrome
+bg              
+^G
+^Z
+[1]+  멈춤                  google-chrome
+root@polystudent-virtual-machine:~/다운로드# bg
+[1]+ google-chrome &
+root@polystudent-virtual-machine:~/다운로드# [0516/105001.002742:ERROR:nacl_helper_linux.cc(355)] NaCl helper process running without a sandbox!
+Most likely you need to configure your SUID sandbox correctly
+^C
+[1]+  완료                  google-chrome
+root@polystudent-virtual-machine:~/다운로드# nano /usr/bin/google-chrome-stable
+root@polystudent-virtual-machine:~/다운로드# google-chrome
+[5168:5183:0516/105125.604483:ERROR:command_buffer_proxy_impl.cc(128)] ContextResult::kTransientFailure: Failed to send GpuControl.CreateCommandBuffer.
+[0516/105150.043436:ERROR:nacl_helper_linux.cc(355)] NaCl helper process running without a sandbox!
+Most likely you need to configure your SUID sandbox correctly
+root@polystudent-virtual-machine:~/다운로드# google-chrome
+[5360:5375:0516/105201.609670:ERROR:command_buffer_proxy_impl.cc(128)] ContextResult::kTransientFailure: Failed to send GpuControl.CreateCommandBuffer.
+^Z
+[1]+  멈춤                  google-chrome
+root@polystudent-virtual-machine:~/다운로드# bg
+[1]+ google-chrome &
+root@polystudent-virtual-machine:~/다운로드# ^C
+root@polystudent-virtual-machine:~/다운로드# [0516/105218.019767:ERROR:nacl_helper_linux.cc(355)] NaCl helper process running without a sandbox!
+Most likely you need to configure your SUID sandbox correctly
+^C
+[1]+  완료                  google-chrome
+root@polystudent-virtual-machine:~/다운로드# bg
+bash: bg: 현재: 그런 작업이 없음
+root@polystudent-virtual-machine:~/다운로드# fg
+bash: fg: 현재: 그런 작업이 없음
+root@polystudent-virtual-machine:~/다운로드# 
